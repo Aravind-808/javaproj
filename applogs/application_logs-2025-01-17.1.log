@@ -1,0 +1,63 @@
+2025-01-22 12:01:26 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.1.Final} (Line: 46)
+2025-01-22 12:01:26 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time. (Line: 91)
+2025-01-22 12:01:26 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final} (Line: 49)
+2025-01-22 12:01:27 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!) (Line: 72)
+2025-01-22 12:01:27 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://10.10.44.43:3306/ops_db] (Line: 115)
+2025-01-22 12:01:27 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {user=root, password=****} (Line: 124)
+2025-01-22 12:01:27 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false (Line: 129)
+2025-01-22 12:01:27 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1) (Line: 239)
+2025-01-22 12:01:27 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect (Line: 158)
+2025-01-22 12:01:28 [main] INFO  org.hibernate.tuple.PojoInstantiator - HHH000182: No default (no-argument) constructor for class: com.corent.ticketbooking.Ticket (class must be instantiated by Interceptor) (Line: 47)
+2025-01-22 12:01:33 [main] INFO  com.corent.ticketbooking.ManageTickets - Booking tickets. Passenger count: 1 (Line: 32)
+2025-01-22 12:01:43 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1054, SQLState: 42S22 (Line: 137)
+2025-01-22 12:01:43 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Unknown column 'starting_point' in 'field list' (Line: 142)
+2025-01-22 12:01:43 [main] ERROR org.hibernate.internal.ExceptionMapperStandardImpl - HHH000346: Error during managed flush [org.hibernate.exception.SQLGrammarException: could not execute statement] (Line: 39)
+2025-01-22 12:01:43 [main] ERROR com.corent.ticketbooking.ManageTickets - An error occurred while creating the ticket:  (Line: 71)
+javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not execute statement
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1490) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:515) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3348) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2519) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at com.corent.ticketbooking.ManageTickets.bookTicket(ManageTickets.java:58) [classes/:?]
+	at com.corent.ticketbooking.TicketBooking.main(TicketBooking.java:31) [classes/:?]
+Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3175) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3689) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1484) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	... 10 more
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'starting_point' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3175) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3689) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1484) ~[hibernate-core-5.4.1.Final.jar:5.4.1.Final]
+	... 10 more

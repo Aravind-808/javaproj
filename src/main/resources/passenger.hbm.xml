@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<hibernate-mapping>
+    <class name="com.corent.ticketbooking.Ticket" table="ticket">
+        <id name="pID" column="p_id">
+            <generator class="increment" />
+        </id>
+        <property name="name" column="name" />
+        <property name="age" column="age" />
+        <property name="startingPoint" column="starting_point" />
+        <property name="endingPoint" column="ending_point" />
+        <property name="status" column="status" />
+    </class>
+</hibernate-mapping>
